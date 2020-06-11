@@ -98,7 +98,14 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
      */
     @Override
     public int privateMsg(int subType, int msgId, long fromQQ, String msg, int font) {
-        // 这里处理消息
+        if ("/nbhbdm".equals(msg)){
+            CQ.sendPrivateMsg(fromQQ, "你不会百度吗 JCQ插件 by TheZihanGu\nGitHub: https://github.com/TheZihanGu/nbhbdm-jcq\nUsage: /nbhbdm [搜索内容]");
+        }
+        if (msg.contains("/nbhbdm ")) {
+            String search = msg.replace("/nbhbdm ", "");
+            String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
+            CQ.sendPrivateMsg(fromQQ,"链接：" + web_link);
+        }
         return MSG_IGNORE;
     }
 
