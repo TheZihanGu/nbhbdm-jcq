@@ -140,7 +140,7 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
         }
         if (msg.contains("/nbhbdm ")) {
             String search = msg.replace("/nbhbdm ", "");
-            String web_link = "" + URLEncoder.encode("https://nbhbdm.cn/?s=" + search);
+            String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
             CQ.sendGroupMsg(fromGroup,CC.at(fromQQ) + "链接：" + web_link);
         }
         return MSG_IGNORE;
