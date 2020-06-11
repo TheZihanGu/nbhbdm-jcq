@@ -136,7 +136,7 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
 
         // 这里处理消息
         if ("/nbhbdm".equals(msg)){
-            CQ.sendGroupMsg(fromGroup, "你不会百度吗 JCQ插件 by TheZihanGu\nGitHub: https://github.com/TheZihanGu/nbhbdm-jcq\nUsage: /nbhbdm [搜索内容]");
+            CQ.sendGroupMsg(fromGroup, CC.at(fromQQ) + "你不会百度吗 JCQ插件 by TheZihanGu\nGitHub: https://github.com/TheZihanGu/nbhbdm-jcq\nUsage: /nbhbdm [搜索内容]");
         }
         if (msg.contains("/nbhbdm ")) {
             String search = msg.replace("/nbhbdm ", "");
