@@ -150,6 +150,10 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
             String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
             CQ.sendGroupMsg(fromGroup,CC.at(fromQQ) + "链接：" + web_link);
         }
+        if (msg.contains("怎么办") || msg.contains("为什么")) {
+            String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(msg);
+            CQ.sendGroupMsg(fromGroup, CC.at(fromQQ) + "不如来试试万能的百度：" + web_link);
+        }
         return MSG_IGNORE;
     }
 
