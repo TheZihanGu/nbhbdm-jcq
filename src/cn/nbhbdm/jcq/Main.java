@@ -102,9 +102,21 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
             CQ.sendPrivateMsg(fromQQ, "你不会百度吗 JCQ插件 by TheZihanGu\nGitHub: https://github.com/TheZihanGu/nbhbdm-jcq\nUsage: /nbhbdm [搜索内容]");
         }
         if (msg.contains("/nbhbdm ")) {
-            String search = msg.replace("/nbhbdm ", "");
-            String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
-            CQ.sendPrivateMsg(fromQQ,"链接：" + web_link);
+            if (msg.contains("[CQ:") || msg.contains("http")) {
+                CQ.sendPrivateMsg(fromQQ, "ERROR: 生成内容中包含CQ码或链接，禁止生成。");
+            }
+            else {
+                String search = msg.replace("/nbhbdm ", "");
+                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
+                CQ.sendPrivateMsg(fromQQ, "链接：" + web_link);
+            }
+        }
+        if (msg.contains("怎么办") || msg.contains("为什么")) {
+            if (msg.contains("[CQ:") || msg.contains("http") || msg == "怎么办" || msg == "为什么") {}
+            else {
+                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(msg);
+                CQ.sendPrivateMsg(fromQQ, "不如来试试万能的百度：" + web_link);
+            }
         }
         return MSG_IGNORE;
     }
