@@ -156,7 +156,7 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
             }
         }
         if (msg.contains("怎么办") || msg.contains("为什么")) {
-            if (msg.contains("[CQ:") || msg.contains("http")) {}
+            if (msg.contains("[CQ:") || msg.contains("http") || msg == "怎么办" || msg == "为什么") {}
             else {
                 String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(msg);
                 CQ.sendGroupMsg(fromGroup, CC.at(fromQQ) + "不如来试试万能的百度：" + web_link);
