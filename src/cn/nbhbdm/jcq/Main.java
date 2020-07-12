@@ -7,6 +7,7 @@ import org.meowy.cqp.jcq.event.JcqAppAbstract;
 import javax.swing.*;
 import java.net.URLEncoder;
 
+import cn.nbhbdm.jcq.json.parsingJson;
 /**
  * 你不会百度吗 JCQ 插件
  * @author TheZihanGu
@@ -107,14 +108,14 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
             }
             else {
                 String search = msg.replace("/nbhbdm ", "");
-                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
+                String web_link = parsingJson.parsing(search);
                 CQ.sendPrivateMsg(fromQQ, "链接：" + web_link);
             }
         }
         if (msg.contains("怎么办") || msg.contains("为什么")) {
             if (msg.contains("[CQ:") || msg.contains("http") || msg == "怎么办" || msg == "为什么") {}
             else {
-                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(msg);
+                String web_link = parsingJson.parsing(msg);
                 CQ.sendPrivateMsg(fromQQ, "不如来试试万能的百度：" + web_link);
             }
         }
@@ -163,14 +164,14 @@ public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
             }
             else {
                 String search = msg.replace("/nbhbdm ", "");
-                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(search);
+                String web_link = parsingJson.parsing(search);
                 CQ.sendGroupMsg(fromGroup, CC.at(fromQQ) + "链接：" + web_link);
             }
         }
         if (msg.contains("怎么办") || msg.contains("为什么")) {
             if (msg.contains("[CQ:") || msg.contains("http") || msg == "怎么办" || msg == "为什么") {}
             else {
-                String web_link = "https://nbhbdm.cn/?s=" + URLEncoder.encode(msg);
+                String web_link = parsingJson.parsing(msg);
                 CQ.sendGroupMsg(fromGroup, CC.at(fromQQ) + "不如来试试万能的百度：" + web_link);
             }
         }
