@@ -11,7 +11,7 @@ import cn.nbhbdm.jcq.json.parsingJson;
 /**
  * 你不会百度吗 JCQ 插件
  * @author TheZihanGu
- * @version 0.1.0
+ * @version 0.2.0
  */
 
 public class Main extends JcqAppAbstract implements ICQVer, IMsg, IRequest {
